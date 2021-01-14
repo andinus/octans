@@ -5,6 +5,10 @@
 
 Octans is a program to solve Algot's Wordplay (Wordsearch) puzzles.
 
+- Website: https://andinus.nand.sh/octans
+- Source: https://git.tilde.institute/andinus/octans
+- GitHub: https://github.com/andinus/octans
+
 * Demo
 This was recorded with =asciinema(1)=.
 
