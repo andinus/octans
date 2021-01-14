@@ -1,0 +1,22 @@
+#+SETUPFILE: ~/.emacs.d/org-templates/projects.org
+#+EXPORT_FILE_NAME: index
+#+OPTIONS: toc:2
+#+TITLE: Octans
+
+Octans is a program to solve Algot's Wordplay (Wordsearch) puzzles.
+
+* Documentation
+The url to be passed must be in either format:
+
+- https://tilde.zone/web/statuses/105531207939242077
+  Link when you view it from your local instance.
+
+- https://mastodon.art/@Algot/105333136907848390
+  Link from Algot's profile.
+** Options
+*** dict
+Octans's default dictionary file is =/usr/share/dict/words=, use =--dict=
+flag to change the dictionary. The words in dictionary must be seperated
+by a newline (=\n=).
+*** verbose
+This will increase verbosity.
