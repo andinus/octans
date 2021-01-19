@@ -18,6 +18,28 @@ This was recorded with =asciinema(1)=.
 + alt-link (download): https://andinus.nand.sh/static/octans
 
 * Documentation
+** Implementation
+Initially it went over the list of words & checked if they exist in the
+grid. This was very slow.
+
+Currently it walks the grid & checks if the current string exist in the
+dictionary. This is faster for these reasons:
+
+- The dictionary is sorted, we perform binary range search on the
+  dictionary to return the list of all words that start with specific
+  string.
+- Starting positions are limited.
+
+If the dictionary wasn't sorted then this probably would've been slower
+than previous implementation.
+
+** Options
+*** dict
+Octans's default dictionary file is =/usr/share/dict/words=, use =--dict=
+flag to change the dictionary. The words in dictionary must be seperated
+by a newline (=\n=) & sorted alphabetically.
+
+*** url
 The url to be passed must be in either format:
 
 - Link when you view it from your local instance:
@@ -25,12 +47,6 @@ The url to be passed must be in either format:
 
 - Link from Algot's profile:
   https://mastodon.art/@Algot/105333136907848390
-
-** Options
-*** dict
-Octans's default dictionary file is =/usr/share/dict/words=, use =--dict=
-flag to change the dictionary. The words in dictionary must be seperated
-by a newline (=\n=).
 
 *** verbose
 This will increase verbosity.

@@ -1,0 +1,85 @@
+                               ━━━━━━━━━
+                                 OCTANS
+
+                                Andinus
+                               ━━━━━━━━━
+
+
+Table of Contents
+─────────────────
+
+1. Demo
+2. Documentation
+.. 1. Implementation
+.. 2. Options
+
+
+Octans is a program to solve Algot's Wordplay (Wordsearch) puzzles.
+
+• Website: <https://andinus.nand.sh/octans>
+• Source: <https://git.tilde.institute/andinus/octans>
+• GitHub: <https://github.com/andinus/octans>
+
+
+1 Demo
+══════
+
+  This was recorded with `asciinema(1)'.
+
+  [https://asciinema.org/a/384464.png]
+
+  ⁃ Octans 2020-01-14: <https://asciinema.org/a/384464>
+  ⁃ alt-link (download): <https://andinus.nand.sh/static/octans>
+
+
+[https://asciinema.org/a/384464.png] <https://asciinema.org/a/384464>
+
+
+2 Documentation
+═══════════════
+
+2.1 Implementation
+──────────────────
+
+  Initially it went over the list of words & checked if they exist in
+  the grid. This was very slow.
+
+  Currently it walks the grid & checks if the current string exist in
+  the dictionary. This is faster for these reasons:
+
+  • The dictionary is sorted, we perform binary range search on the
+    dictionary to return the list of all words that start with specific
+    string.
+  • Starting positions are limited.
+
+  If the dictionary wasn't sorted then this probably would've been
+  slower than previous implementation.
+
+
+2.2 Options
+───────────
+
+2.2.1 dict
+╌╌╌╌╌╌╌╌╌╌
+
+  Octans's default dictionary file is `/usr/share/dict/words', use
+  `--dict' flag to change the dictionary. The words in dictionary must
+  be seperated by a newline (`\n') & sorted alphabetically.
+
+
+2.2.2 url
+╌╌╌╌╌╌╌╌╌
+
+  The url to be passed must be in either format:
+
+  • Link when you view it from your local instance:
+    <https://tilde.zone/web/statuses/105531207939242077>
+
+  • Link from Algot's profile:
+    <https://mastodon.art/@Algot/105333136907848390>
+
+
+2.2.3 verbose
+╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  This will increase verbosity.
