@@ -1,7 +1,7 @@
-unit module WordSearch;
+unit module Octans::WordSearch;
 
-use Neighbors;
-use RangeSearch;
+use Octans::Neighbors;
+use Octans::RangeSearch;
 
 # word-search walks the given grid & tries to find words in the
 # dictionary. It walks in Depth-First manner (lookup Depth-First

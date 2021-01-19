@@ -1,4 +1,4 @@
-unit module Puzzle;
+unit module Octans::Puzzle;
 
 use WWW;
 

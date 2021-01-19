@@ -1,4 +1,4 @@
-unit module Neighbors;
+unit module Octans::Neighbors;
 
 # neighbors returns the neighbors of given index. Neighbors are cached
 # in @neighbors array. This way we don't have to compute them

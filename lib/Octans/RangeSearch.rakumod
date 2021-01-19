@@ -1,4 +1,4 @@
-unit module RangeSearch;
+unit module Octans::RangeSearch;
 
 # range-starts-with returns a subset of given @dict list that start
 # with $str. It should be faster than:
