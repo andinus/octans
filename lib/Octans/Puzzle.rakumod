@@ -2,23 +2,15 @@ unit module Octans::Puzzle;
 
 use WWW;
 
-# get-puzzle returns the @puzzle along with it's @gray-squares.
+# get-puzzle returns the @puzzle given input path.
 sub get-puzzle (
-    Str $path,
-
-    # @puzzle will hold the puzzle grid.
-    @puzzle,
-
-    # @gray-squares will hold the position of gray squares. Algot
-    # marks them with an asterisk ("*") after the character.
-    @gray-squares
+    Str $path
 ) is export {
-    # @raw_puzzle will hold the puzzle before parsing.
-    my @raw-puzzle;
+    my @puzzle;
 
     # Read the puzzle from file if it exists.
     if $path.IO.f {
-        @raw-puzzle = $path.IO.lines.words;
+        @puzzle = $path.IO.lines.map(*.words.cache.Array);
     } else {
         # $url will hold the url that we'll call to get the toot data.
         my Str $url;
@@ -37,36 +29,32 @@ sub get-puzzle (
         if (jget($url)<media_attachments>[0]<description> ~~
 
             # This regex gets the puzzle in $match.
-            / [[(\w [\*]?) \s*] ** 4] ** 4 $/) -> $match {
-
-            @raw-puzzle = $match[0];
-        }
-    }
-    parse-puzzle(@raw-puzzle, @puzzle, @gray-squares);
-}
-
-# parse-puzzle parses the puzzle from @raw-puzzle. It's assumed to be
-# a 4x4 grid.
-sub parse-puzzle (
-    @raw-puzzle, @puzzle, @gray-squares
-) is export {
-    # @gray-squares should be empty.
-    @gray-squares = ();
-
-    # We have each character of the puzzle stored in @raw-puzzle.
-    for 0 .. 3 -> $y {
-        for 0 .. 3 -> $x {
-            with @raw-puzzle[($y * 4) + $x].Str.lc -> $char {
-
-                # If it ends with an asterisk then we push the
-                # position to @gray-squares.
-                if $char.ends-with("*") {
-                    @puzzle[$y][$x] = $char.comb[0];
-                    push @gray-squares, [$y, $x];
-                } else {
-                    @puzzle[$y][$x] = $char;
+            / ([(\w [\*]?) \s*?]+ \n)+  $/) -> $match {
+            for 0 .. $match[0].end -> $y {
+                for 0 .. $match[0][$y].words.end -> $x {
+                    @puzzle[$y][$x] = $match[0][$y].words[$x].lc;
                 }
             }
         }
     }
+    return @puzzle;
+}
+
+# set-gray squares will set the @gray-squares array while removing the
+# "*" in @puzzle. Algot marks them with an asterisk ("*") after the
+# character.
+sub set-gray-squares (
+    @puzzle --> List
+) is export {
+    my List @gray-squares;
+
+    for 0 .. @puzzle.end -> $y {
+        for 0 .. @puzzle[$y].end -> $x {
+            if @puzzle[$y][$x].ends-with("*") {
+                @puzzle[$y][$x] .= chop;
+                push @gray-squares, ($y, $x);
+            }
+        }
+    }
+    return @gray-squares;
 }

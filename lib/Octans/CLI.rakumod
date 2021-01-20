@@ -29,22 +29,23 @@ multi sub MAIN (
     # @puzzle holds the puzzle.
     #
     # @gray-squares holds the list of indexes of valid starting
-    # positions in the puzzle. ($y, $x)
+    # positions in the puzzle.
     my (@puzzle, @gray-squares);
 
     # Set the sample puzzle if requested.
     if $sample {
-        parse-puzzle(
-            < n a t k
-              i m e c
-              a* r d e
-              t* e c h >,
-            @puzzle, @gray-squares
-        );
+        @puzzle = [
+            [<n a t k>],
+            [<i m e c>],
+            [<a* r d e>],
+            [<t* e c h>],
+        ];
     }
 
-    # Get the puzzle from $path if it's passed.
-    get-puzzle($_, @puzzle, @gray-squares) with $path;
+    # Get the puzzle from $path if it's passed. And set @gray-squares.
+    @puzzle = get-puzzle($_) with $path;
+    # set-gray-squares also removes asterisks from @puzzle.
+    @gray-squares = set-gray-squares(@puzzle); # ($y, $x)
 
     if $verbose {
         # Don't print path if using the dictionary included with the
