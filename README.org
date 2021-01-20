@@ -43,8 +43,9 @@ Octans's default dictionary file is =/usr/share/dict/words=, use =--dict=
 flag to change the dictionary. The words in dictionary must be seperated
 by a newline (=\n=) & sorted alphabetically.
 
-*** url
-The url to be passed must be in either format:
+*** path
+The path to be passed must be a *readable file* or an *url* in either
+format:
 
 - Link when you view it from your local instance:
   https://tilde.zone/web/statuses/105531207939242077

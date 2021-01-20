@@ -26,13 +26,17 @@ Octans is a program to solve Algot's Wordplay (Wordsearch) puzzles.
 
   This was recorded with `asciinema(1)'.
 
-  [https://asciinema.org/a/384464.png]
+  [https://asciinema.org/a/385500.png]
+
+  ⁃ Octans v0.1.0 - finds 10 solutions to a puzzle:
+    <https://asciinema.org/a/385598>
+  ⁃ Octans v0.1.0: <https://asciinema.org/a/385500>
 
   ⁃ Octans 2020-01-14: <https://asciinema.org/a/384464>
   ⁃ alt-link (download): <https://andinus.nand.sh/static/octans>
 
 
-[https://asciinema.org/a/384464.png] <https://asciinema.org/a/384464>
+[https://asciinema.org/a/385500.png] <https://asciinema.org/a/385500>
 
 
 2 Documentation
@@ -67,10 +71,11 @@ Octans is a program to solve Algot's Wordplay (Wordsearch) puzzles.
   be seperated by a newline (`\n') & sorted alphabetically.
 
 
-2.2.2 url
-╌╌╌╌╌╌╌╌╌
+2.2.2 path
+╌╌╌╌╌╌╌╌╌╌
 
-  The url to be passed must be in either format:
+  The path to be passed must be a *readable file* or an *url* in either
+  format:
 
   • Link when you view it from your local instance:
     <https://tilde.zone/web/statuses/105531207939242077>
