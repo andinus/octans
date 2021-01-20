@@ -14,7 +14,7 @@
         "Octans::WordSearch" : "lib/Octans/WordSearch.rakumod"
     },
     "depends" : [
-        "WWW:ver<1.005006>:auth<github:raku-community-modules>"
+        "WWW:ver<1.005006+>:auth<github:raku-community-modules>"
     ],
     "build-depends" : [ ],
     "test-depends" : [ ],
