@@ -16,8 +16,9 @@ Table of Contents
 .. 1. Implementation
 .. 2. Options
 4. News
-.. 1. v0.1.1 - 2021-01-20
-.. 2. v0.1.0 - 2021-01-19
+.. 1. v0.1.2 - 2021-01-20
+.. 2. v0.1.1 - 2021-01-20
+.. 3. v0.1.0 - 2021-01-19
 
 
 Octans is a program to solve Algot's Wordplay (Wordsearch) puzzles.
@@ -151,13 +152,19 @@ Octans is a program to solve Algot's Wordplay (Wordsearch) puzzles.
 4 News
 ══════
 
-4.1 v0.1.1 - 2021-01-20
+4.1 v0.1.2 - 2021-01-20
+───────────────────────
+
+  ⁃ Input puzzle can now be of any size & not restricted to 4x4 grid.
+
+
+4.2 v0.1.1 - 2021-01-20
 ───────────────────────
 
   ⁃ Read puzzle from a file.
 
 
-4.2 v0.1.0 - 2021-01-19
+4.3 v0.1.0 - 2021-01-19
 ───────────────────────
 
   This version improved performance by re-implementing the algorithm to
