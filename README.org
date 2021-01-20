@@ -12,11 +12,14 @@ Octans is a program to solve Algot's Wordplay (Wordsearch) puzzles.
 * Demo
 This was recorded with =asciinema(1)=.
 
+[[https://asciinema.org/a/385500][https://asciinema.org/a/385500.png]]
+
++ Octans v0.1.0 - finds 10 solutions to a puzzle:
+  https://asciinema.org/a/385598
 + Octans v0.1.0: https://asciinema.org/a/385500
+
 + Octans 2020-01-14: https://asciinema.org/a/384464
 + alt-link (download): https://andinus.nand.sh/static/octans
-
-[[https://asciinema.org/a/385500][https://asciinema.org/a/385500.png]]
 
 * Documentation
 ** Implementation
