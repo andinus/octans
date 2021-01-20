@@ -18,7 +18,7 @@ This was recorded with =asciinema(1)=.
   https://asciinema.org/a/385598
 + Octans v0.1.0: https://asciinema.org/a/385500
 
-+ Octans 2020-01-14: https://asciinema.org/a/384464
++ Octans 2021-01-14: https://asciinema.org/a/384464
 + alt-link (download): https://andinus.nand.sh/static/octans
 
 * Installation
@@ -89,9 +89,9 @@ format:
 This will increase verbosity.
 
 * News
-** v0.1.1 - 2020-01-20
+** v0.1.1 - 2021-01-20
 + Read puzzle from a file.
 
-** v0.1.0 - 2020-01-19
+** v0.1.0 - 2021-01-19
 This version improved performance by re-implementing the algorithm to
 find words in grid.
