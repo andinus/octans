@@ -12,6 +12,7 @@ multi sub MAIN (
     Str $path?, #= path to the crossword (file or url)
     Str :$dict = (%?RESOURCES<mwords/354984si.ngl> //
                   "/usr/share/dict/words").Str, #= dictionary file
+    Int :$length = 7, #= minimum word length (default: 7)
     Bool :s($sample), #= run the sample puzzle
     Bool :v($verbose), #= increase verbosity
     Bool :$version, #= print version
@@ -23,8 +24,8 @@ multi sub MAIN (
     }
 
     # @dict holds the sorted dictionary. Only consider words >= 7
-    # chars.
-    my Str @dict = $dict.IO.lines.grep(*.chars >= 7);
+    # chars by default.
+    my Str @dict = $dict.IO.lines.grep(*.chars >= $length);
 
     # @puzzle holds the puzzle.
     #
