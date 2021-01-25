@@ -1,6 +1,6 @@
 #+SETUPFILE: ~/.emacs.d/org-templates/projects.org
 #+EXPORT_FILE_NAME: index
-#+OPTIONS: toc:2
+#+OPTIONS: toc:2 num:nil
 #+TITLE: Octans
 
 Octans is a program to solve Algot's Wordplay (Wordsearch) puzzles.
@@ -74,7 +74,8 @@ than previous implementation.
 Octans's default dictionary file is =/usr/share/dict/words=, use =--dict=
 flag to change the dictionary. The words in dictionary must be seperated
 by a newline (=\n=) & sorted alphabetically.
-
+*** length
+Minimum word length to look for. Default is 7.
 *** path
 The path to be passed must be a *readable file* or an *url* in either
 format:
