@@ -20,10 +20,13 @@ sub neighbors (
     state Array @neighbors;
 
     if @puzzle[$y][$x] {
-
-        # If we've already computed the neighbors then no need to do
-        # it again.
+        # Don't re-compute neighbors.
         unless @neighbors[$y][$x] {
+            # Set it to an empty array because otherwise if it has no
+            # neighbors then it would've be recomputed everytime
+            # neighbors() was called.
+            @neighbors[$y][$x] = [];
+
             my Int $pos-x;
             my Int $pos-y;
 
