@@ -119,6 +119,9 @@ Implementation
   If the dictionary wasn't sorted then this probably would've been
   slower than previous implementation.
 
+  The `neighbors' subroutine (`lib/Octans/Neighbors.rakumod') was taken
+  from my AoC (Advent of Code) 2020's day-11 solution.
+
 
 Options
 ───────
