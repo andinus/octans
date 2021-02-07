@@ -24,15 +24,19 @@ sub get-puzzle (
             $url = "https://mastodon.art/api/v1/statuses/" ~ $path.split("/")[*-1];
         }
 
+        # grids capture grids of a row.
+        my token grids { \S \*? }
+        # rows capture rows of the puzzle.
+        my token rows { <grids> ** 2..* % \h }
+
         # jget just get's the url & decodes the json. We access the
         # description field of 1st media attachment.
         if (jget($url)<media_attachments>[0]<description> ~~
-
-            # This regex gets the puzzle in $match.
-            / ([(\w [\*]?) \s*?]+ \n)+  $/) -> $match {
-            for 0 .. $match[0].end -> $y {
-                for 0 .. $match[0][$y].words.end -> $x {
-                    @puzzle[$y][$x] = $match[0][$y].words[$x].lc;
+            / \n\n <rows>+ % \n /
+           ) -> $match {
+            for 0 .. $match<rows>.end -> $y {
+                for 0 .. $match<rows>[$y]<grids>.end -> $x {
+                    @puzzle[$y][$x] = $match<rows>[$y]<grids>[$x].lc;
                 }
             }
         }
