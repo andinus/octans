@@ -43,8 +43,13 @@ multi sub MAIN (
         ];
     }
 
-    # Get the puzzle from $path if it's passed. And set @gray-squares.
-    @puzzle = get-puzzle($_) with $path;
+    # Get the puzzle from $path if it's passed.
+    if $path.IO.f {
+        @puzzle = $path.IO.lines.map(*.words.cache.Array);
+    } else {
+        @puzzle = get-puzzle($path);
+    }
+
     # set-gray-squares also removes asterisks from @puzzle.
     @gray-squares = set-gray-squares(@puzzle); # ($y, $x)
 
