@@ -1,9 +1,7 @@
 #+title: Octans
-#+author: Andinus
-#+email: andinus@nand.sh
+#+subtitle: Octans is a program to solve Algot's Wordplay (Wordsearch) puzzles
+#+export_file_name: index
 #+setupfile: ~/.emacs.d/org-templates/projects.org
-
-Octans is a program to solve Algot's Wordplay (Wordsearch) puzzles.
 
 | Website         | https://andinus.nand.sh/octans             |
 | Source          | https://git.tilde.institute/andinus/octans |

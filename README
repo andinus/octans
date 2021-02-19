@@ -1,8 +1,10 @@
-                               ━━━━━━━━━
+           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
                                  OCTANS
+             Octans is a program to solve Algot's Wordplay
+                          (Wordsearch) puzzles
 
                                 Andinus
-                               ━━━━━━━━━
+           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 Table of Contents
@@ -10,26 +12,9 @@ Table of Contents
 
 Demo
 Installation
-.. Release
-.. From Source
-..... Without `git'
-..... With `git'
 Documentation
-.. Implementation
-.. Options
-..... dict
-..... length
-..... path
-..... verbose
 News
-.. v0.1.4 - 2021-02-19
-.. v0.1.3 - 2021-01-24
-.. v0.1.2 - 2021-01-20
-.. v0.1.1 - 2021-01-20
-.. v0.1.0 - 2021-01-19
 
-
-Octans is a program to solve Algot's Wordplay (Wordsearch) puzzles.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  Website          <https://andinus.nand.sh/octans>
