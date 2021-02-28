@@ -100,5 +100,5 @@ multi sub MAIN (
 ) { say "Octans v" ~ $?DISTRIBUTION.meta<version>; }
 
 multi sub MAIN (
-    Bool :$help #= print help
+    Bool :h($help) #= print help
 ) { USAGE(); exit; }
