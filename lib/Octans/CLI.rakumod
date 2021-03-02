@@ -30,12 +30,13 @@ multi sub MAIN (
     # set-gray-squares also removes asterisks from @puzzle.
     @gray-squares = set-gray-squares(@puzzle); # ($y, $x)
 
-    if $verbose {
+    if so $verbose {
         # Don't print path if using the dictionary included with the
         # program.
-        say "Dictionary: ", $dict.Str
-                             unless ($dict.Str
-                                     eq %?RESOURCES<mwords/354984si.ngl>.Str);
+        unless $dict.Str eq %?RESOURCES<mwords/354984si.ngl>.Str {
+            say "Dictionary: " ~ $dict.Str;
+        }
+
         say "Gray squares: ", @gray-squares;
         say "Puzzle";
         "    $_".say for @puzzle;
@@ -54,7 +55,7 @@ multi sub MAIN (
 
         # gather all the words that word-search finds starting from
         # $pos.
-        for gather word-search(
+        word: for gather word-search(
             @dict, @puzzle, $pos[0], $pos[1],
         ) -> (
             # word-search returns the word along with @visited which
@@ -62,24 +63,26 @@ multi sub MAIN (
             # word was found.
             $word, @visited
         ) {
-            # Print the word, along with the time taken (if $verbose).
-            say ($verbose
-                 ?? "\n" ~ $word ~ " [" ~ DateTime.now - $initial ~ "𝑠]"
-                 !! $word);
+            # If not $verbose then print the word.
+            unless so $verbose {
+                say $word;
+                next word;
+            }
+
+            # Print the word, along with the time taken.
+            say "\n" ~ $word ~ " [" ~ DateTime.now - $initial ~ "𝑠]";
 
             # Print the puzzle, highlighting the path.
-            if $verbose {
-                for ^@puzzle.elems -> $y {
-                    print " " x 3;
-                    for ^@puzzle[$y].elems -> $x {
-                        print " ", (
+            for ^@puzzle.elems -> $y {
+                print " " x 3;
+                for ^@puzzle[$y].elems -> $x {
+                    print " " ~ (
                         @visited[$y][$x]
                         ?? (%𝒻𝒶𝓃𝒸𝓎-𝒸𝒽𝒶𝓇𝓈{@puzzle[$y][$x]} // @puzzle[$y][$x])
                         !! @puzzle[$y][$x]
                     );
-                    }
-                    print "\n";
                 }
+                print "\n";
             }
         }
     }

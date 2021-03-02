@@ -34,13 +34,13 @@ sub neighbors (
             # each direction according to the values specified in
             # @directions array. In this case we're just trying to
             # move in 4 directions (top, bottom, left & right).
-            DIRECTION: for @directions -> $direction {
+            direction: for @directions -> $direction {
                 $pos-y = $y + $direction[0];
                 $pos-x = $x + $direction[1];
 
                 # If movement in this direction is out of puzzle grid
                 # boundary then move on to next direction.
-                next DIRECTION unless @puzzle[$pos-y][$pos-x];
+                next direction unless @puzzle[$pos-y][$pos-x];
 
                 # If neighbors exist in this direction then add them
                 # to @neighbors[$y][$x] array.
