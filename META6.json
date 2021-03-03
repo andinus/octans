@@ -10,6 +10,7 @@
         "Octans::CLI" : "lib/Octans/CLI.rakumod",
         "Octans::Neighbors" : "lib/Octans/Neighbors.rakumod",
         "Octans::Puzzle" : "lib/Octans/Puzzle.rakumod",
+        "Octans::Puzzle::Get" : "lib/Octans/Puzzle/Get.rakumod",
         "Octans::RangeSearch" : "lib/Octans/RangeSearch.rakumod",
         "Octans::WordSearch" : "lib/Octans/WordSearch.rakumod"
     },
