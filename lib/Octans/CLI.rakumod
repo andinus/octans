@@ -33,8 +33,6 @@ multi sub MAIN(
 
     # start-pos block loops over each starting position.
     start-pos: for $puzzle.gray-squares -> $pos {
-        my DateTime $initial = DateTime.now;
-
         # gather all the words that word-search finds starting from
         # $pos.
         word: for gather word-search(
@@ -45,14 +43,8 @@ multi sub MAIN(
             # word was found.
             $word, @visited
         ) {
-            # If not $verbose then just print the word.
-            unless so $verbose {
-                say $word;
-                next word;
-            }
-
-            # Print the word, along with the time taken.
-            printf "\n%s \[%.8f𝑠\]\n", $word, DateTime.now - $initial;
+            printf "%s$word\n", $verbose ?? "\n" !! "";
+            next word unless so $verbose;
 
             # Print the puzzle, highlighting the path.
             for ^$puzzle.grids.elems -> $y {
@@ -66,7 +58,6 @@ multi sub MAIN(
         }
     }
 }
-
 
 multi sub MAIN(
     Bool :$version #= print version
