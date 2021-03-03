@@ -2,9 +2,9 @@ use Octans::Puzzle;
 use Octans::WordSearch;
 use Octans::Puzzle::Get;
 
-proto MAIN (|) is export { unless so @*ARGS { say $*USAGE; exit }; {*} }
+proto MAIN(|) is export { unless so @*ARGS { say $*USAGE; exit }; {*} }
 
-multi sub MAIN (
+multi sub MAIN(
     Str $path, #= path to the crossword (file or url)
     Str :$dict = (%?RESOURCES<mwords/354984si.ngl> //
                   "/usr/share/dict/words").Str, #= dictionary file
@@ -68,6 +68,6 @@ multi sub MAIN (
 }
 
 
-multi sub MAIN (
+multi sub MAIN(
     Bool :$version #= print version
 ) { say "Octans v" ~ $?DISTRIBUTION.meta<version>; }

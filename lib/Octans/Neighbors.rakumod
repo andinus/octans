@@ -1,9 +1,7 @@
-unit module Octans::Neighbors;
-
 # neighbors returns the neighbors of given index. Neighbors are cached
 # in @neighbors array. This way we don't have to compute them
 # everytime neighbors subroutine is called for the same position.
-sub neighbors (
+sub neighbors(
     @puzzle, Int $y, Int $x --> List
 ) is export {
     # @directions is holding a list of directions we can move in. It's

@@ -1,5 +1,3 @@
-unit module Octans::RangeSearch;
-
 # range-starts-with returns a subset of given @dict list that start
 # with $str. It should be faster than:
 #
@@ -7,7 +5,7 @@ unit module Octans::RangeSearch;
 #
 # @dict should be a sorted list of words. It performs binary lookup on
 # the list.
-sub range-starts-with (
+sub range-starts-with(
     @dict, Str $str --> List
 ) is export {
     # $lower, $upper hold the lower and upper index of the range

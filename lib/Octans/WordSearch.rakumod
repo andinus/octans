@@ -1,12 +1,10 @@
-unit module Octans::WordSearch;
-
 use Octans::Neighbors;
 use Octans::RangeSearch;
 
 # word-search walks the given grid & tries to find words in the
 # dictionary. It walks in Depth-First manner (lookup Depth-First
 # search).
-sub word-search (
+sub word-search(
     # @dict holds the dictionary. @puzzle holds the puzzle.
     @dict, @puzzle,
 

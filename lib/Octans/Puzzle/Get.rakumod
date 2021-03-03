@@ -2,7 +2,7 @@ use WWW;
 use Octans::Puzzle;
 
 # get-puzzle returns Puzzle.new() given input path.
-sub get-puzzle (
+sub get-puzzle(
     Str $path
 ) is export {
     my @grids;
