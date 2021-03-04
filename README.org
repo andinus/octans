@@ -28,6 +28,9 @@ source. In any case, ~zef~ is required to install the distribution.
 You can run Octans without ~zef~. Just run ~raku -Ilib bin/octans~ from
 within the source directory.
 
+- *Note*: Octans requires ~WWW~ module. You can however chose to not install
+  it if you wish to run it locally. Checkout the ~without-www~ branch.
+
 ** Release
 
 1. Run ~zef install octans~.
