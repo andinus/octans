@@ -51,7 +51,11 @@ multi sub MAIN(
                 print " " x 3;
                 for ^$puzzle.grids[$y].elems -> $x {
                     printf " {$puzzle.grids[$y][$x]}%s",
-                    @visited[$y][$x] ?? "/" !! " ";
+                    @visited[$y][$x]
+                     # visited gray squares get marked with "*",
+                     # visited squares with "/" & unvisited with " ".
+                     ?? ($puzzle.is-gray-square($y, $x) ?? "*" !! "/")
+                     !! " ";
                 }
                 print "\n";
             }
