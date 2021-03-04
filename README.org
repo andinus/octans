@@ -110,9 +110,38 @@ This will increase verbosity.
 
 * News
 
+** v0.2.0 - 2021-03-04
+
++ Removed ~sample~ option
+
+  ~--sample~ will not solve the sample puzzle.
+
++ Removed shorthand for verbose option
+
+  ~-v~ won't work in ~v0.2.0~.
+
++ Change representation of visited squares
+
+  When ~--verbose~ was passed, it would print the solved puzzle with
+  visited squares replaced with fancy characters. Now it marks them by
+  adding:
+
+  - ~*~ to visited + gray squares (start positions)
+  - ~/~ to visited squares
+
++ Removed time taken
+
+  Time taken won't be printed anymore.
+
+  #+begin_quote
+  It was misleading because the time printed was not the time taken to
+  find that specific word, it was the time taken to find all the words
+  upto that word. It would reset for each starting position.
+  #+end_quote
+
 ** v0.1.4 - 2021-02-19
 
-+ Fix the puzzle parsing regex
++ Fixed the puzzle parsing regex
 
   The older regex fails to parse this puzzle:
   https://mastodon.art/@Algot/105690195742318751.
