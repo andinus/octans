@@ -16,8 +16,8 @@ multi sub MAIN(
     my Str @dict = $dict.IO.lines.grep(*.chars >= $length);
 
     my $puzzle = $path.IO.f
-    ?? Puzzle.new(grids => $path.IO.lines.map(*.words.Array))
-    !! get-puzzle($path);
+                  ?? Puzzle.new(grids => $path.IO.lines.map(*.lc.words.Array))
+                  !! get-puzzle($path);
 
     if so $verbose {
         # Don't print path if using the dictionary included with the
