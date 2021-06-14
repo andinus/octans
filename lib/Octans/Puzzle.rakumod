@@ -7,8 +7,8 @@ class Puzzle is export {
             for 0 .. @!grids[$y].end -> $x {
                 # Remove the markers from the puzzle & push the
                 # positions to @!gray-squares.
-                if @!grids[$y][$x].match("*") -> $match {
-                    @!grids[$y][$x] = $match.replace-with("");
+                if @!grids[$y][$x].ends-with("*") {
+                    @!grids[$y][$x] = @!grids[$y][$x].comb[0];
                     push @!gray-squares, ($y, $x);
                 }
             }
