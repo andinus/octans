@@ -13,6 +13,8 @@ This was recorded with ~asciinema~.
 
 [[https://asciinema.org/a/385500][https://asciinema.org/a/385500.png]]
 
++ Octans v0.2.3: [[https://andinus.unfla.me/resources/projects/octans/v0.2.3_2022-01-12_sample_input.mp4][Visualized Output]]
+
 + Octans v0.1.0 - finds 10 solutions to a puzzle:
   https://asciinema.org/a/385598
 + Octans v0.1.0: https://asciinema.org/a/385500
@@ -92,6 +94,10 @@ Octans's default dictionary file is =/usr/share/dict/words=, use ~--dict~
 flag to change the dictionary. The words in dictionary must be seperated
 by a newline (=\n=) & sorted alphabetically.
 
+*** visualize
+
+Generates a video solution for the puzzle.
+
 *** length
 
 Minimum word length to look for. Default is 7.
@@ -112,6 +118,13 @@ format:
 This will increase verbosity.
 
 * News
+
+** v0.2.3 - 2022-01-12
+
++ Add visualize option.
+
+  ~--visualize~ now generates a video solution for the puzzle using Cairo
+  and ffmpeg.
 
 ** v0.2.0 - 2021-03-04
 
