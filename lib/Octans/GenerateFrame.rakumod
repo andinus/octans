@@ -20,8 +20,6 @@ constant %C = (
     fg-special-calm => "#61284f",
 ).map: {.key => hex2rgb(.value)};
 
-enum IterStatus <Walking Blocked Completed>;
-
 sub generate-frame(
     :%canvas, :$out, :$side, :@puzzle, :@visited, :%meta, :$found
 ) is export {

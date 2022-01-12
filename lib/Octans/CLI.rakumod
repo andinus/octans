@@ -92,6 +92,7 @@ multi sub MAIN(
         run «ffmpeg -loglevel "$log-level" -r 1.5 -i "$output/\%08d.png"
                     -vf 'tpad=stop_mode=clone:stop_duration=1'
                     -vcodec libx264 -crf 24 -pix_fmt yuv420p "$output/solution.mp4"»;
+        put "Video Solution: $output/solution.mp4";
     }
 }
 
