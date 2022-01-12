@@ -12,7 +12,9 @@
         "Octans::Puzzle" : "lib/Octans/Puzzle.rakumod",
         "Octans::Puzzle::Get" : "lib/Octans/Puzzle/Get.rakumod",
         "Octans::RangeSearch" : "lib/Octans/RangeSearch.rakumod",
-        "Octans::WordSearch" : "lib/Octans/WordSearch.rakumod"
+        "Octans::WordSearch" : "lib/Octans/WordSearch.rakumod",
+        "Octans::Hex2RGB" : "lib/Octans/Hex2RGB.rakumod",
+        "Octans::GenerateFrame" : "lib/Octans/GenerateFrame.rakumod"
     },
     "depends" : [
         "WWW:ver<1.005006+>:auth<github:raku-community-modules>",
