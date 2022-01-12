@@ -1,9 +1,9 @@
 use Octans::Neighbors;
 use Octans::RangeSearch;
 
-# word-search walks the given grid & tries to find words in the
-# dictionary. It walks in Depth-First manner (lookup Depth-First
-# search).
+#| word-search walks the given grid & tries to find words in the
+#| dictionary. It walks in Depth-First manner (lookup Depth-First
+#| search).
 sub word-search(
     # @dict holds the dictionary. @puzzle holds the puzzle.
     @dict, @puzzle,
@@ -18,11 +18,18 @@ sub word-search(
     Int $y, Int $x, $str? = @puzzle[$y][$x],
 
     # @visited holds the positions that we've already visited.
-    @visited? is copy --> List
+    @visited? is copy,
+
+    # If true then every iteration of walking is returned.
+    Bool :$visualize,
+
+    --> List
 ) is export {
     # If @visited was not passed then mark the given cell as visited
     # because it's the cell we're starting at.
     @visited[$y][$x] = True unless @visited;
+
+    take "", @visited if $visualize;
 
     # neighbor block loops over the neighbors of $y, $x.
     neighbor: for neighbors(@puzzle, $y, $x).List -> $pos {
@@ -53,7 +60,7 @@ sub word-search(
                     # subset of words that start with "a", so keeping
                     # this in mind we pass the output of last
                     # range-starts-with (@list).
-                    @list, @puzzle, $pos[0], $pos[1], $word, @visited
+                    @list, @puzzle, $pos[0], $pos[1], $word, @visited, :$visualize,
                 );
             }
         }
