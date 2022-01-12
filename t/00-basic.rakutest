@@ -1,0 +1,12 @@
+use Test;
+
+plan 8;
+
+use-ok 'Octans::CLI';
+use-ok 'Octans::Hex2RGB';
+use-ok 'Octans::Neighbors';
+use-ok 'Octans::WordSearch';
+use-ok 'Octans::Puzzle';
+use-ok 'Octans::Puzzle:Get';
+use-ok 'Octans::RangeSearch';
+use-ok 'Octans::GenerateFrame';

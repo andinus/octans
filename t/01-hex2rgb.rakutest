@@ -1,0 +1,8 @@
+use Test;
+use Octans::Hex2RGB;
+
+plan 3;
+
+is hex2rgb("#000000"), (0, 0, 0), "#000000";
+is hex2rgb("#b753db"), (183, 83, 219).map(* / 255), "#b753db";
+is hex2rgb("#ffffff"), (1, 1, 1), "#ffffff";
