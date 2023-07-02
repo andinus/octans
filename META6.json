@@ -1,7 +1,7 @@
 {
     "name" : "octans",
     "auth" : "zef:andinus",
-    "version" : "0.2.3",
+    "version" : "0.2.4",
     "description" : "Octans is a program to solve Algot's Wordplay (Wordsearch) puzzles",
     "authors" : [ "Andinus <andinus@nand.sh>" ],
     "license" : "ISC",
@@ -29,5 +29,5 @@
     "tags": [
       "Octans", "WordPlay"
     ],
-    "source-url" : "https://git.tilde.institute/andinus/octans"
+    "source-url" : "https://git.unfla.me/octans"
 }
