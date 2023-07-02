@@ -79,6 +79,14 @@ This will increase verbosity.
 
 * News
 
+** v0.2.5 - 2023-07-02
+
++ Fixed puzzle output with visualize turned off.
+
+  Earlier the program would output a bunch of new lines, etc. The issue was that
+  word-search subroutine was passed ~:visualize~ which sets that flag to always
+  true and that caused weird behaviour, this has been fixed.
+
 ** v0.2.3 - 2022-01-12
 
 + Add visualize option.

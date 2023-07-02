@@ -52,7 +52,7 @@ multi sub MAIN(
         # gather all the words that word-search finds starting from
         # $pos.
         word: for gather word-search(
-            @dict, $puzzle.grids, $pos[0], $pos[1], :visualize
+            @dict, $puzzle.grids, $pos[0], $pos[1], :$visualize
         ) -> (
             # word-search returns the word along with @visited which
             # holds the list of all grids that were visited when the
